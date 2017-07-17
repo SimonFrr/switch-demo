@@ -6,9 +6,9 @@ import {
   PageHeader,
   Alert
 } from 'react-bootstrap';
-import Addresses from './Addresses';
-import Payment from './Payment';
-import Review from './Review';
+import Addresses from './checkout/Addresses';
+import Payment from './checkout/Payment';
+import Review from './checkout/Review';
 
 const Checkout = () => (
   <Col xs={12}>

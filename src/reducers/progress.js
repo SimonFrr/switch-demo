@@ -1,7 +1,9 @@
-export default function(state = 'registration', action) {
+export default function(state = 'checkout', action) {
   switch (action.type) {
-    case 'USER_SUBMITTED_REGISTRATION':
+    case 'API_VALIDATED_REGISTRATION':
       return 'checkout';
+    case 'API_VALIDATED_PAYMENT':
+      return 'confirmation';
     default:
       return state;
   }
