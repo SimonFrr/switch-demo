@@ -3,7 +3,6 @@ import {connect} from 'react-redux';
 import {
   Row,
   Col,
-  PageHeader,
   Panel,
   FormGroup,
   FormControl,
@@ -11,7 +10,7 @@ import {
   Alert
 } from 'react-bootstrap';
 
-const Payment = ({}) => (
+const Payment = () => (
   <Panel header={<h3> Payment Method </h3>}>
     <form>
       <FormGroup>
@@ -64,7 +63,7 @@ const Payment = ({}) => (
         <FormControl type="text" placeholder="123"/>
       </FormGroup>
     </form>
-    
+
     <Alert>
       You will be enrolled in Auto Pay
     </Alert>

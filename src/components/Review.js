@@ -1,17 +1,11 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {
-  Row,
-  Col,
-  PageHeader,
   Panel,
-  FormGroup,
-  FormControl,
-  ControlLabel,
   Button
 } from 'react-bootstrap';
 
-const Review = ({}) => (
+const Review = () => (
   <Panel header={< h3 > Checkout Review < /h3>}>
     <p>
       Selected Plan

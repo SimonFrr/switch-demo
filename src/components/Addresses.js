@@ -3,14 +3,13 @@ import {connect} from 'react-redux';
 import {
   Row,
   Col,
-  PageHeader,
   Panel,
   FormGroup,
   FormControl,
   ControlLabel
 } from 'react-bootstrap';
 
-const Addresses = ({}) => (
+const Addresses = () => (
   <Panel header={<h3> Billing Address </h3>}>
     <form>
       <Row>
