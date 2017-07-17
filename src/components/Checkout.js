@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import {
   Row,
   Col,
-  PageHeader
+  PageHeader,
+  Alert
 } from 'react-bootstrap';
 import Addresses from './Addresses';
 import Payment from './Payment';
@@ -14,6 +15,7 @@ const Checkout = () => (
     <Row>
       <Col xs={12} sm={8} smOffset={2} md={12} mdOffset={0}>
         <PageHeader>Checkout</PageHeader>
+        <Alert>Complete your order of --selected plan-- (price) and you will receive your SIM card within two days. You can then port in a number for free when you activate your sim.</Alert>
       </Col>
     </Row>
     <Row>
