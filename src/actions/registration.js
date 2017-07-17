@@ -1,6 +1,6 @@
 export function submitRegistration () {
   // API call
   return {
-    type: 'USER_SUBMITTED_REGISTRATION'
+    type: 'API_VALIDATED_REGISTRATION'
   }
 }

@@ -1,9 +1,15 @@
-export default function(state = 'checkout', action) {
+export const progressDict = {
+  REGISTRATION: 'REGISTRATION',
+  CHECKOUT: 'CHECKOUT',
+  CONFIRMATION: 'CONFIRMATION'
+}
+
+export default function(state = progressDict.REGISTRATION, action) {
   switch (action.type) {
     case 'API_VALIDATED_REGISTRATION':
-      return 'checkout';
+      return progressDict.CHECKOUT;
     case 'API_VALIDATED_PAYMENT':
-      return 'confirmation';
+      return progressDict.CONFIRMATION;
     default:
       return state;
   }

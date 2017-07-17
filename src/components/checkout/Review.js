@@ -5,7 +5,7 @@ import {
   Button
 } from 'react-bootstrap';
 
-const Review = () => (
+const Review = ({ onCheckoutSubmit }) => (
   <Panel header={< h3 > Checkout Review < /h3>}>
     <p>
       Selected Plan
@@ -35,7 +35,9 @@ const Review = () => (
       </strong>
     </p>
     <br/>
-    <Button bsStyle="primary" bsSize="large" block>Place Order</Button>
+    <Button bsStyle="primary" bsSize="large" block onClick={onCheckoutSubmit}>
+      Place Order
+    </Button>
   </Panel>
 );
 

@@ -9,8 +9,9 @@ import {
 import Addresses from './checkout/Addresses';
 import Payment from './checkout/Payment';
 import Review from './checkout/Review';
+import { submitCheckout } from '../actions/checkout';
 
-const Checkout = () => (
+const Checkout = ({ onCheckoutSubmit }) => (
   <Col xs={12}>
     <Row>
       <Col xs={12} sm={8} smOffset={2} md={12} mdOffset={0}>
@@ -26,12 +27,19 @@ const Checkout = () => (
         <Payment/>
       </Col>
       <Col xs={12} sm={8} smOffset={2} md={4} mdOffset={0}>
-        <Review/>
+        <Review onCheckoutSubmit={onCheckoutSubmit}/>
       </Col>
     </Row>
   </Col>
 );
 
-const ConnectedCheckout = connect()(Checkout)
+const mapDispatchToProps = dispatch => ({
+  onCheckoutSubmit: () => dispatch(submitCheckout())
+});
+
+const ConnectedCheckout = connect(
+  null,
+  mapDispatchToProps
+)(Checkout)
 
 export default ConnectedCheckout
