@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {
+  Row,
   Col,
   PageHeader,
   Panel
@@ -10,20 +11,24 @@ import Payment from './Payment';
 import Review from './Review';
 
 const Checkout = ({ }) => (
-  <div>
-    <Col xs={12}>
-      <PageHeader>Checkout</PageHeader>
-    </Col>
-    <Col lg={4}>
-      <Addresses/>
-    </Col>
-    <Col lg={4}>
-      <Payment/>
-    </Col>
-    <Col lg={4}>
-      <Review/>
-    </Col>
-  </div>
+  <Col xs={12}>
+    <Row>
+      <Col xs={12} sm={8} smOffset={2} md={12} mdOffset={0}>
+        <PageHeader>Checkout</PageHeader>
+      </Col>
+    </Row>
+    <Row>
+      <Col xs={12} sm={8} smOffset={2} md={4} mdOffset={0}>
+        <Addresses/>
+      </Col>
+      <Col xs={12} sm={8} smOffset={2} md={4} mdOffset={0}>
+        <Payment/>
+      </Col>
+      <Col xs={12} sm={8} smOffset={2} md={4} mdOffset={0}>
+        <Review/>
+      </Col>
+    </Row>
+  </Col>
 );
 
 const ConnectedCheckout = connect()(Checkout)

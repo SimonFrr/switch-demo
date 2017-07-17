@@ -12,7 +12,7 @@ import {
 import { submitRegistration } from '../actions/registration';
 
 const Registration = ({ onRegistrationSubmit }) => (
-  <Col xs={12} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
+  <Col xs={12} sm={8} smOffset={2} md={6} mdOffset={3}>
     <PageHeader>Registration</PageHeader>
     <Panel>
       <form>
