@@ -1,38 +1,40 @@
 import React from 'react';
+import { compose } from 'redux';
 import { connect } from 'react-redux';
+import { reduxForm, Field } from 'redux-form';
 import {
   Col,
   PageHeader,
   Panel,
   FormGroup,
-  FormControl,
   ControlLabel,
   Button
 } from 'react-bootstrap';
+import CustomFormControl from './generic/CustomFormControl';
 import { submitRegistration } from '../actions/registration';
 
-const Registration = ({ onRegistrationSubmit }) => (
+const Registration = ({ handleSubmit }) => (
   <Col xs={12} sm={8} smOffset={2} md={6} mdOffset={3}>
     <PageHeader>Registration</PageHeader>
     <Panel>
-      <form>
+      <form onSubmit={handleSubmit}>
         <FormGroup>
           <ControlLabel> First Name </ControlLabel>
-          <FormControl type="text" placeholder="John"/>
+          <Field component={CustomFormControl} name="firstName" type="text" placeholder="John"/>
         </FormGroup>
 
         <FormGroup>
           <ControlLabel> Last Name </ControlLabel>
-          <FormControl type="text" placeholder="Doe"/>
+          <Field component={CustomFormControl} name="lastName" type="text" placeholder="Doe"/>
         </FormGroup>
 
         <FormGroup>
           <ControlLabel> Email Address </ControlLabel>
-          <FormControl type="email" placeholder="you@world.com"/>
+          <Field component={CustomFormControl} name="emailAddress" type="email" placeholder="you@world.com"/>
         </FormGroup>
 
         <FormGroup>
-          <Button bsStyle="success" onClick={onRegistrationSubmit}>
+          <Button type="submit" bsStyle="success">
             Submit
           </Button>
         </FormGroup>
@@ -42,12 +44,12 @@ const Registration = ({ onRegistrationSubmit }) => (
 );
 
 const mapDispatchToProps = dispatch => ({
-  onRegistrationSubmit: () => dispatch(submitRegistration())
+  onSubmit: values => dispatch(submitRegistration(values))
 });
 
-const ConnectedRegistration = connect(
-  null,
-  mapDispatchToProps
-)(Registration)
+const ConnectedRegistration = compose(
+  connect(null, mapDispatchToProps),
+  reduxForm({ form: 'registration' })
+)(Registration);
 
-export default ConnectedRegistration
+export default ConnectedRegistration;
