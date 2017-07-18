@@ -6,6 +6,8 @@ import {
   FormControl,
   ControlLabel
 } from 'react-bootstrap';
+import { Field } from 'redux-form';
+import { FieldCompatibleFormControl } from './FieldCompatibleControls';
 
 export default () => (
   <div>
@@ -15,7 +17,7 @@ export default () => (
           <ControlLabel>
             First Name
           </ControlLabel>
-          <FormControl type="text" placeholder="John"/>
+          <Field component={FieldCompatibleFormControl} name="firstName" type="text" placeholder="John"/>
         </FormGroup>
       </Col>
       <Col xs={6}>
@@ -23,7 +25,7 @@ export default () => (
           <ControlLabel>
             Middle Name / Initials
           </ControlLabel>
-          <FormControl type="text" placeholder="A."/>
+          <Field component={FieldCompatibleFormControl} name="middleName" type="text" placeholder="A."/>
         </FormGroup>
       </Col>
     </Row>
@@ -34,7 +36,7 @@ export default () => (
           <ControlLabel>
             Last Name
           </ControlLabel>
-          <FormControl type="text" placeholder="Doe"/>
+          <Field component={FieldCompatibleFormControl} name="lastName" type="text" placeholder="Doe"/>
         </FormGroup>
       </Col>
     </Row>
@@ -43,18 +45,18 @@ export default () => (
       <ControlLabel>
         Email Address
       </ControlLabel>
-      <FormControl type="email" placeholder="you@world.com"/>
+      <Field component={FieldCompatibleFormControl} name="emailAddress" type="email" placeholder="you@world.com"/>
     </FormGroup>
 
     <FormGroup>
       <ControlLabel>
         Address
       </ControlLabel>
-      <FormControl type="text" placeholder="123 Sesame Street"/>
+      <Field component={FieldCompatibleFormControl} name="addressLine1" type="text" placeholder="123 Sesame Street"/>
     </FormGroup>
 
     <FormGroup>
-      <FormControl type="text" placeholder="Building A"/>
+      <Field component={FieldCompatibleFormControl} name="addressLine2" type="text" placeholder="Building A"/>
     </FormGroup>
 
     <Row>
@@ -63,7 +65,7 @@ export default () => (
           <ControlLabel>
             Zip
           </ControlLabel>
-          <FormControl type="text" placeholder="00000"/>
+          <Field component={FieldCompatibleFormControl} name="zipCode" type="text" placeholder="10001"/>
         </FormGroup>
       </Col>
       <Col xs={6}>
@@ -71,7 +73,7 @@ export default () => (
           <ControlLabel>
             City
           </ControlLabel>
-          <FormControl type="text" placeholder="NYC"/>
+          <Field component={FieldCompatibleFormControl} name="city" type="text" placeholder="NYC"/>
         </FormGroup>
       </Col>
     </Row>
@@ -90,7 +92,7 @@ export default () => (
           <ControlLabel>
             State / Province
           </ControlLabel>
-          <FormControl type="text" placeholder="Delaware"/>
+          <Field component={FieldCompatibleFormControl} name="stateOrProvince" type="text" placeholder="Delaware"/>
         </FormGroup>
       </Col>
     </Row>
@@ -99,7 +101,7 @@ export default () => (
       <ControlLabel>
         Telephone (to receive updates on your order)
       </ControlLabel>
-      <FormControl type="tel" placeholder="123456789"/>
+      <Field component={FieldCompatibleFormControl} name="phoneNumber" type="tel" placeholder="234323432"/>
     </FormGroup>
   </div>
 );
