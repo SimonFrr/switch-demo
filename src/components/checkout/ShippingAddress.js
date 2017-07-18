@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 import { reduxForm, Field, formValueSelector } from 'redux-form';
 import {
   Panel,
-  FormGroup
+  FormGroup,
+  Checkbox
 } from 'react-bootstrap';
 import { FieldCompatibleCheckbox } from '../generic/FieldCompatibleControls';
 import AdressForm from '../generic/AddressForm';
@@ -35,7 +36,10 @@ const mapStateToProps = state => ({
 
 const ConnectedShippingAddress = compose(
   connect(mapStateToProps),
-  reduxForm({ form: 'shippingAddress' })
+  reduxForm({
+    form: 'shippingAddress',
+    initialValues: { isSameAsBilling: true }
+  })
 )(ShippingAddress);
 
 export default ConnectedShippingAddress;

@@ -10,5 +10,7 @@ export const FieldCompatibleFormControl = ({input, meta, ...props}) => {
 };
 
 export const FieldCompatibleCheckbox = ({input, meta, ...props}) => {
-  return <Checkbox {...props} {...input} />
+  // the checked attribute fixes a checkbox display bug
+  // when the initial value is set to true with redux-form
+  return <Checkbox {...props} {...input} checked={input.value}/>
 };
