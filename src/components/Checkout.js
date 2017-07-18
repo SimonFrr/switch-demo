@@ -6,7 +6,8 @@ import {
   PageHeader,
   Alert
 } from 'react-bootstrap';
-import Addresses from './checkout/Addresses';
+import BillingAddress from './checkout/BillingAddress';
+import ShippingAddress from './checkout/ShippingAddress';
 import Payment from './checkout/Payment';
 import Review from './checkout/Review';
 import { submitCheckout } from '../actions/checkout';
@@ -16,12 +17,13 @@ const Checkout = ({ onCheckoutSubmit }) => (
     <Row>
       <Col xs={12} sm={8} smOffset={2} md={12} mdOffset={0}>
         <PageHeader>Checkout</PageHeader>
-        <Alert>Complete your order of --selected plan-- (price) and you will receive your SIM card within two days. You can then port in a number for free when you activate your sim.</Alert>
+        <Alert>Complete your order of --selected plan-- (price) and you will receive your SIM card within two days. You can then port in a number for free when you activate your SIM.</Alert>
       </Col>
     </Row>
     <Row>
       <Col xs={12} sm={8} smOffset={2} md={4} mdOffset={0}>
-        <Addresses/>
+        <BillingAddress/>
+        <ShippingAddress/>
       </Col>
       <Col xs={12} sm={8} smOffset={2} md={4} mdOffset={0}>
         <Payment/>

@@ -9,7 +9,7 @@ import {
   ControlLabel
 } from 'react-bootstrap';
 
-const Addresses = () => (
+const BillingAddress = () => (
   <Panel header={<h3> Billing Address </h3>}>
     <form>
       <Row>
@@ -108,6 +108,6 @@ const Addresses = () => (
   </Panel>
 );
 
-const ConnectedAddresses = connect()(Addresses)
+const ConnectedBillingAddress = connect()(BillingAddress)
 
-export default ConnectedAddresses
+export default ConnectedBillingAddress
