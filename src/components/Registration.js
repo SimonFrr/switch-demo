@@ -10,7 +10,7 @@ import {
   ControlLabel,
   Button
 } from 'react-bootstrap';
-import CustomFormControl from './generic/CustomFormControl';
+import { FieldCompatibleFormControl } from './generic/FieldCompatibleControls';
 import { submitRegistration } from '../actions/registration';
 
 const Registration = ({ handleSubmit }) => (
@@ -20,17 +20,17 @@ const Registration = ({ handleSubmit }) => (
       <form onSubmit={handleSubmit}>
         <FormGroup>
           <ControlLabel> First Name </ControlLabel>
-          <Field component={CustomFormControl} name="firstName" type="text" placeholder="John"/>
+          <Field component={FieldCompatibleFormControl} name="firstName" type="text" placeholder="John"/>
         </FormGroup>
 
         <FormGroup>
           <ControlLabel> Last Name </ControlLabel>
-          <Field component={CustomFormControl} name="lastName" type="text" placeholder="Doe"/>
+          <Field component={FieldCompatibleFormControl} name="lastName" type="text" placeholder="Doe"/>
         </FormGroup>
 
         <FormGroup>
           <ControlLabel> Email Address </ControlLabel>
-          <Field component={CustomFormControl} name="emailAddress" type="email" placeholder="you@world.com"/>
+          <Field component={FieldCompatibleFormControl} name="emailAddress" type="email" placeholder="you@world.com"/>
         </FormGroup>
 
         <FormGroup>
