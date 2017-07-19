@@ -4,8 +4,7 @@ import { connect } from 'react-redux';
 import { reduxForm, Field, formValueSelector } from 'redux-form';
 import {
   Panel,
-  FormGroup,
-  Checkbox
+  FormGroup
 } from 'react-bootstrap';
 import { FieldCompatibleCheckbox } from '../generic/FieldCompatibleControls';
 import AdressForm from '../generic/AddressForm';

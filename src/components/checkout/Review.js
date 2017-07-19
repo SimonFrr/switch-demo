@@ -1,15 +1,17 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import { compose } from 'redux';
+import { connect } from 'react-redux';
 import {
   Panel,
   Button
 } from 'react-bootstrap';
+import PlanDisplayer from '../generic/PlanDisplayer';
 
-const Review = ({ onCheckoutSubmit }) => (
+const Review = ({ onCheckoutSubmit, planName, planPrice }) => (
   <Panel header={< h3 > Checkout Review < /h3>}>
     <p>
-      Selected Plan
-      <span className="pull-right">$39</span>
+      {planName}
+      <span className="pull-right">{planPrice}</span>
     </p>
     <p>
       SIM Card
@@ -41,6 +43,9 @@ const Review = ({ onCheckoutSubmit }) => (
   </Panel>
 );
 
-const ConnectedReview = connect()(Review)
+const ConnectedReview = compose(
+  connect(),
+  PlanDisplayer
+)(Review);
 
 export default ConnectedReview
