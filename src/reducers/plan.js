@@ -22,8 +22,10 @@ const planList = [{
   }
 ];
 
-export const getPlanId = state => state.planId;
 const getPlanFromId = id => planList.find(el => el.id === id);
+const getPlanId = state => state.planId;
 const getPlan = state => getPlanFromId(getPlanId(state));
+
+export const hasPlan = state => !!getPlan(state);
 export const getPlanName = state => getPlan(state).name;
 export const getPlanPrice = state => getPlan(state).price;
