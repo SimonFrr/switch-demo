@@ -4,7 +4,6 @@ import Registration from './components/Registration';
 import Checkout from './components/Checkout';
 import Confirmation from './components/Confirmation';
 import { progressDict, getProgress } from './reducers/progress';
-import { hasPlan } from './reducers/plan';
 import { saveQueryParams } from './actions/queryParams';
 import './App.css';
 
@@ -15,10 +14,6 @@ class App extends Component {
   }
 
   render() {
-    if (!this.props.hasPlan) {
-      return <div>BUG</div>
-    }
-
     switch (this.props.progress) {
       case progressDict.REGISTRATION:
         return <Registration/>
@@ -33,7 +28,6 @@ class App extends Component {
 }
 
 const mapStateToProps = state => ({
-  hasPlan: hasPlan(state),
   progress: getProgress(state)
 });
 

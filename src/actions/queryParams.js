@@ -1,3 +1,5 @@
+import { hasPlanWithId } from '../reducers/plan';
+
 // https://davidwalsh.name/query-string-javascript
 // We use this instead of URLSearchParams for maximum compatibility
 function getUrlParameter(name) {
@@ -9,6 +11,11 @@ function getUrlParameter(name) {
 
 export function saveQueryParams () {
   const planId = getUrlParameter('planId');
+
+  if (!hasPlanWithId(planId)) {
+    window.location = 'http://www.getswitchmobile.com/';
+  }
+
   return {
     type: 'SAVE_QUERY_PARAMS',
     planId

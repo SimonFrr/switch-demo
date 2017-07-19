@@ -18,14 +18,14 @@ const planList = [{
   }, {
     id: 'c',
     name: 'Data Hungry Plan',
-    price: 39.8
+    price: 39
   }
 ];
 
 const getPlanFromId = id => planList.find(el => el.id === id);
+export const hasPlanWithId = id => !!getPlanFromId(id);
+
 const getPlanId = state => state.planId;
 const getPlan = state => getPlanFromId(getPlanId(state));
-
-export const hasPlan = state => !!getPlan(state);
 export const getPlanName = state => getPlan(state).name;
 export const getPlanPrice = state => getPlan(state).price;
