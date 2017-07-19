@@ -13,6 +13,7 @@ import Payment from './checkout/Payment';
 import Review from './checkout/Review';
 import { submitCheckout } from '../actions/checkout';
 import PlanDisplayer from './generic/PlanDisplayer';
+import { reduxForm } from 'redux-form';
 
 const Checkout = ({ onCheckoutSubmit, planName, planPrice }) => (
   <Col xs={12}>
@@ -23,16 +24,18 @@ const Checkout = ({ onCheckoutSubmit, planName, planPrice }) => (
       </Col>
     </Row>
     <Row>
-      <Col xs={12} sm={8} smOffset={2} md={4} mdOffset={0}>
-        <BillingAddress/>
-        <ShippingAddress/>
-      </Col>
-      <Col xs={12} sm={8} smOffset={2} md={4} mdOffset={0}>
-        <Payment/>
-      </Col>
-      <Col xs={12} sm={8} smOffset={2} md={4} mdOffset={0}>
-        <Review onCheckoutSubmit={onCheckoutSubmit}/>
-      </Col>
+      <form>
+        <Col xs={12} sm={8} smOffset={2} md={4} mdOffset={0}>
+          <BillingAddress/>
+          <ShippingAddress/>
+        </Col>
+        <Col xs={12} sm={8} smOffset={2} md={4} mdOffset={0}>
+          <Payment/>
+        </Col>
+        <Col xs={12} sm={8} smOffset={2} md={4} mdOffset={0}>
+          <Review onCheckoutSubmit={onCheckoutSubmit}/>
+        </Col>
+      </form>
     </Row>
   </Col>
 );
@@ -43,7 +46,12 @@ const mapDispatchToProps = dispatch => ({
 
 const ConnectedCheckout = compose(
   connect(null, mapDispatchToProps),
-  PlanDisplayer
+  PlanDisplayer,
+  reduxForm({
+    form: 'checkout',
+    destroyOnUnmount: false,
+    initialValues: { isShippingSameAsBilling: true }
+  })
 )(Checkout);
 
 export default ConnectedCheckout

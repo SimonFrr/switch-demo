@@ -1,7 +1,7 @@
 import React from 'react';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
-import { reduxForm, Field, formValueSelector } from 'redux-form';
+import { Field, formValueSelector } from 'redux-form';
 import {
   Panel,
   FormGroup
@@ -9,37 +9,30 @@ import {
 import { FieldCompatibleCheckbox } from '../generic/FieldCompatibleControls';
 import AdressForm from '../generic/AddressForm';
 
-const ShippingAddress = ({ isSameAsBilling }) => {
-  const content = isSameAsBilling || <AdressForm/>;
+const ShippingAddress = ({ isShippingSameAsBilling }) => {
+  const content = isShippingSameAsBilling || <AdressForm namespace="shipping"/>;
 
   return (
     <Panel header={<h3> Shipping Address </h3>}>
-      <form>
-        <FormGroup>
-          <Field component={FieldCompatibleCheckbox} name="isSameAsBilling">
-            Same as billing
-          </Field>
-        </FormGroup>
+      <FormGroup>
+        <Field component={FieldCompatibleCheckbox} name="isShippingSameAsBilling">
+          Same as billing
+        </Field>
+      </FormGroup>
 
-        {content}
-      </form>
+      {content}
     </Panel>
   );
 }
 
-const selector = formValueSelector('shippingAddress');
+const selector = formValueSelector('checkout');
 
 const mapStateToProps = state => ({
-  isSameAsBilling: selector(state, 'isSameAsBilling')
+  isShippingSameAsBilling: selector(state, 'isShippingSameAsBilling')
 });
 
 const ConnectedShippingAddress = compose(
-  connect(mapStateToProps),
-  reduxForm({
-    form: 'shippingAddress',
-    initialValues: { isSameAsBilling: true },
-    destroyOnUnmount: false
-  })
+  connect(mapStateToProps)
 )(ShippingAddress);
 
 export default ConnectedShippingAddress;
