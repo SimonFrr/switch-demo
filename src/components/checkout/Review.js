@@ -1,6 +1,5 @@
 import React from 'react';
 import { compose } from 'redux';
-import { connect } from 'react-redux';
 import {
   Panel,
   Button
@@ -44,7 +43,6 @@ const Review = ({ onCheckoutSubmit, planName, planPrice }) => (
 );
 
 const ConnectedReview = compose(
-  connect(),
   PlanDisplayer
 )(Review);
 
