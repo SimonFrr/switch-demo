@@ -8,9 +8,9 @@ function getUrlParameter(name) {
 };
 
 export function saveQueryParams () {
-  const plan = getUrlParameter('plan');
+  const planId = getUrlParameter('planId');
   return {
     type: 'SAVE_QUERY_PARAMS',
-    plan
+    planId
   }
 }

@@ -8,7 +8,7 @@ import { saveQueryParams } from './actions/queryParams';
 import './App.css';
 
 class App extends Component {
-  // Save plan in store before any component renders
+  // Save plan id in store before any component renders
   componentWillMount() {
     this.props.saveQueryParams()
   }
@@ -22,7 +22,7 @@ class App extends Component {
       case progressDict.CONFIRMATION:
         return <Confirmation/>
       default:
-        return <div>BUG BUG BUG</div>
+        return <Registration/>
     }
   }
 }
