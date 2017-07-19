@@ -15,7 +15,10 @@ const BillingAddress = () => (
 
 const ConnectedBillingAddress = compose(
   connect(),
-  reduxForm({ form: 'billingAddress' })
+  reduxForm({
+    form: 'billingAddress',
+    destroyOnUnmount: false
+  })
 )(BillingAddress);
 
 export default ConnectedBillingAddress;

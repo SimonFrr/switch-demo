@@ -37,7 +37,8 @@ const ConnectedShippingAddress = compose(
   connect(mapStateToProps),
   reduxForm({
     form: 'shippingAddress',
-    initialValues: { isSameAsBilling: true }
+    initialValues: { isSameAsBilling: true },
+    destroyOnUnmount: false
   })
 )(ShippingAddress);
 

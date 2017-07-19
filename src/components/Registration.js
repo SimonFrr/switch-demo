@@ -49,7 +49,10 @@ const mapDispatchToProps = dispatch => ({
 
 const ConnectedRegistration = compose(
   connect(null, mapDispatchToProps),
-  reduxForm({ form: 'registration' })
+  reduxForm({
+    form: 'registration',
+    destroyOnUnmount: false
+  })
 )(Registration);
 
 export default ConnectedRegistration;
