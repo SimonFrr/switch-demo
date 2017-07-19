@@ -15,7 +15,7 @@ import { submitCheckout } from '../actions/checkout';
 import PlanDisplayer from './generic/PlanDisplayer';
 import { reduxForm } from 'redux-form';
 
-const Checkout = ({ onCheckoutSubmit, planName, planPrice }) => (
+const Checkout = ({ handleSubmit, planName, planPrice }) => (
   <Col xs={12}>
     <Row>
       <Col xs={12} sm={8} smOffset={2} md={12} mdOffset={0}>
@@ -33,7 +33,7 @@ const Checkout = ({ onCheckoutSubmit, planName, planPrice }) => (
           <Payment/>
         </Col>
         <Col xs={12} sm={8} smOffset={2} md={4} mdOffset={0}>
-          <Review onCheckoutSubmit={onCheckoutSubmit}/>
+          <Review handleSubmit={handleSubmit}/>
         </Col>
       </form>
     </Row>
@@ -41,7 +41,7 @@ const Checkout = ({ onCheckoutSubmit, planName, planPrice }) => (
 );
 
 const mapDispatchToProps = dispatch => ({
-  onCheckoutSubmit: () => dispatch(submitCheckout())
+  onSubmit: values => dispatch(submitCheckout(values))
 });
 
 const ConnectedCheckout = compose(
