@@ -9,8 +9,7 @@ import {
 import { Field } from 'redux-form';
 import { FieldCompatibleFormControl } from './FieldCompatibleControls';
 
-export default ({ namespace }) => {
-  const namespaced = name => `${namespace}.${name}`;
+export default () => {
   return (
     <div>
       <Row>
@@ -19,7 +18,7 @@ export default ({ namespace }) => {
             <ControlLabel>
               First Name
             </ControlLabel>
-            <Field component={FieldCompatibleFormControl} name={namespaced('firstName')} type="text" placeholder="John"/>
+            <Field component={FieldCompatibleFormControl} name="firstName" type="text" placeholder="John"/>
           </FormGroup>
         </Col>
         <Col xs={6}>
@@ -27,7 +26,7 @@ export default ({ namespace }) => {
             <ControlLabel>
               Middle Name / Initials
             </ControlLabel>
-            <Field component={FieldCompatibleFormControl} name={namespaced('middleName')} type="text" placeholder="A."/>
+            <Field component={FieldCompatibleFormControl} name="middleName" type="text" placeholder="A."/>
           </FormGroup>
         </Col>
       </Row>
@@ -38,7 +37,7 @@ export default ({ namespace }) => {
             <ControlLabel>
               Last Name
             </ControlLabel>
-            <Field component={FieldCompatibleFormControl} name={namespaced('lastName')} type="text" placeholder="Doe"/>
+            <Field component={FieldCompatibleFormControl} name="lastName" type="text" placeholder="Doe"/>
           </FormGroup>
         </Col>
       </Row>
@@ -47,18 +46,18 @@ export default ({ namespace }) => {
         <ControlLabel>
           Email Address
         </ControlLabel>
-        <Field component={FieldCompatibleFormControl} name={namespaced('emailAddress')} type="email" placeholder="you@world.com"/>
+        <Field component={FieldCompatibleFormControl} name="emailAddress" type="email" placeholder="you@world.com"/>
       </FormGroup>
 
       <FormGroup>
         <ControlLabel>
           Address
         </ControlLabel>
-        <Field component={FieldCompatibleFormControl} name={namespaced('addressLine1')} type="text" placeholder="123 Sesame Street"/>
+        <Field component={FieldCompatibleFormControl} name="addressLine1" type="text" placeholder="123 Sesame Street"/>
       </FormGroup>
 
       <FormGroup>
-        <Field component={FieldCompatibleFormControl} name={namespaced('addressLine2')} type="text" placeholder="Building A"/>
+        <Field component={FieldCompatibleFormControl} name="addressLine2" type="text" placeholder="Building A"/>
       </FormGroup>
 
       <Row>
@@ -67,7 +66,7 @@ export default ({ namespace }) => {
             <ControlLabel>
               Zip
             </ControlLabel>
-            <Field component={FieldCompatibleFormControl} name={namespaced('zipCode')} type="text" placeholder="10001"/>
+            <Field component={FieldCompatibleFormControl} name="zipCode" type="text" placeholder="10001"/>
           </FormGroup>
         </Col>
         <Col xs={6}>
@@ -75,7 +74,7 @@ export default ({ namespace }) => {
             <ControlLabel>
               City
             </ControlLabel>
-            <Field component={FieldCompatibleFormControl} name={namespaced('city')} type="text" placeholder="NYC"/>
+            <Field component={FieldCompatibleFormControl} name="city" type="text" placeholder="NYC"/>
           </FormGroup>
         </Col>
       </Row>
@@ -94,7 +93,7 @@ export default ({ namespace }) => {
             <ControlLabel>
               State / Province
             </ControlLabel>
-            <Field component={FieldCompatibleFormControl} name={namespaced('stateOrProvince')} type="text" placeholder="Delaware"/>
+            <Field component={FieldCompatibleFormControl} name="stateOrProvince" type="text" placeholder="Delaware"/>
           </FormGroup>
         </Col>
       </Row>
@@ -103,7 +102,7 @@ export default ({ namespace }) => {
         <ControlLabel>
           Telephone (to receive updates on your order)
         </ControlLabel>
-        <Field component={FieldCompatibleFormControl} name={namespaced('phoneNumber')} type="tel" placeholder="234323432"/>
+        <Field component={FieldCompatibleFormControl} name="phoneNumber" type="tel" placeholder="234323432"/>
       </FormGroup>
     </div>
   )

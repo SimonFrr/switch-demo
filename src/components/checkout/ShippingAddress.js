@@ -1,7 +1,7 @@
 import React from 'react';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
-import { Field, formValueSelector } from 'redux-form';
+import { Field, formValueSelector, FormSection } from 'redux-form';
 import {
   Panel,
   FormGroup
@@ -10,7 +10,11 @@ import { FieldCompatibleCheckbox } from '../generic/FieldCompatibleControls';
 import AdressForm from '../generic/AddressForm';
 
 const ShippingAddress = ({ isShippingSameAsBilling }) => {
-  const content = isShippingSameAsBilling || <AdressForm namespace="shipping"/>;
+  const content = isShippingSameAsBilling || (
+    <FormSection name="shipping">
+      <AdressForm/>
+    </FormSection>
+  );
 
   return (
     <Panel header={<h3> Shipping Address </h3>}>
@@ -25,10 +29,8 @@ const ShippingAddress = ({ isShippingSameAsBilling }) => {
   );
 }
 
-const selector = formValueSelector('checkout');
-
 const mapStateToProps = state => ({
-  isShippingSameAsBilling: selector(state, 'isShippingSameAsBilling')
+  isShippingSameAsBilling: formValueSelector('checkout')(state, 'isShippingSameAsBilling')
 });
 
 const ConnectedShippingAddress = compose(
