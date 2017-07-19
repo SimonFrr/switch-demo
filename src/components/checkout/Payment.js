@@ -4,66 +4,70 @@ import {
   Col,
   Panel,
   FormGroup,
-  FormControl,
   ControlLabel,
   Alert
 } from 'react-bootstrap';
+import { Field, FormSection } from 'redux-form';
+import { FieldCompatibleSelect, FieldCompatibleFormControl } from '../generic/FieldCompatibleControls';
+
+const months = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
+const years = [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028];
 
 const Payment = () => (
   <Panel header={<h3> Payment Method </h3>}>
-    <FormGroup>
-      <ControlLabel>
-        Credit / Debit Card Type
-      </ControlLabel>
-      <FormControl componentClass="select">
-        <option value="none">please select</option>
-        <option value="visa">visa</option>
-        <option value="mastercard">mastercard</option>
-      </FormControl>
-    </FormGroup>
+    <FormSection name="payment">
+      <FormGroup>
+        <ControlLabel>
+          Credit / Debit Card Type
+        </ControlLabel>
+        <Field component={FieldCompatibleSelect} name="cardType">
+          <option value="visa">visa</option>
+          <option value="mastercard">mastercard</option>
+          <option value="amex">amex</option>
+        </Field>
+      </FormGroup>
 
-    <FormGroup>
-      <ControlLabel>
-        Credit / Debit Card Number
-      </ControlLabel>
-      <FormControl type="text" placeholder="123"/>
-    </FormGroup>
+      <FormGroup>
+        <ControlLabel>
+          Credit / Debit Card Number
+        </ControlLabel>
+        <Field component={FieldCompatibleFormControl} name="cardNumber"/>
+      </FormGroup>
 
-    <Row>
-      <Col xs={6}>
-        <FormGroup>
-          <ControlLabel>
-            Expiration Month
-          </ControlLabel>
-          <FormControl componentClass="select">
-            <option value="none">please select</option>
-            <option value="none">january</option>
-          </FormControl>
-        </FormGroup>
-      </Col>
-      <Col xs={6}>
-        <FormGroup>
-          <ControlLabel>
-            Expiration Year
-          </ControlLabel>
-          <FormControl componentClass="select">
-            <option value="none">please select</option>
-            <option value="none">1995</option>
-          </FormControl>
-        </FormGroup>
-      </Col>
-    </Row>
+      <Row>
+        <Col xs={6}>
+          <FormGroup>
+            <ControlLabel>
+              Expiration Month
+            </ControlLabel>
+            <Field component={FieldCompatibleSelect} name="expirationMonth">
+              {months.map((month, index) => <option key={index} value={month}>{month}</option>)}
+            </Field>
+          </FormGroup>
+        </Col>
+        <Col xs={6}>
+          <FormGroup>
+            <ControlLabel>
+              Expiration Year
+            </ControlLabel>
+            <Field component={FieldCompatibleSelect} name="expirationYear">
+              {years.map((year, index) => <option key={index} value={year}>{year}</option>)}
+            </Field>
+          </FormGroup>
+        </Col>
+      </Row>
 
-    <FormGroup>
-      <ControlLabel>
-        Card Verification Number
-      </ControlLabel>
-      <FormControl type="text" placeholder="123"/>
-    </FormGroup>
+      <FormGroup>
+        <ControlLabel>
+          Card Verification Number
+        </ControlLabel>
+        <Field component={FieldCompatibleFormControl} name="verificationNumber"/>
+      </FormGroup>
 
-    <Alert>
-      You will be enrolled in Auto Pay
-    </Alert>
+      <Alert>
+        You will be enrolled in Auto Pay
+      </Alert>
+    </FormSection>
   </Panel>
 );
 
