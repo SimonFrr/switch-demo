@@ -4,6 +4,7 @@ import Registration from './components/Registration';
 import Checkout from './components/Checkout';
 import Confirmation from './components/Confirmation';
 import { progressDict, getProgress } from './reducers/progress';
+import { isLoading } from './reducers/loading';
 import { saveQueryParams } from './actions/queryParams';
 import './App.css';
 
@@ -14,6 +15,10 @@ class App extends Component {
   }
 
   render() {
+    if (this.props.isLoading) {
+      return <div>LOADING !</div>
+    }
+
     switch (this.props.progress) {
       case progressDict.REGISTRATION:
         return <Registration/>
@@ -28,6 +33,7 @@ class App extends Component {
 }
 
 const mapStateToProps = state => ({
+  isLoading: isLoading(state),
   progress: getProgress(state)
 });
 
