@@ -24,7 +24,7 @@ const Checkout = ({ handleSubmit, planName, planPrice }) => (
       </Col>
     </Row>
     <Row>
-      <form>
+      <form onSubmit={handleSubmit}>
         <Col xs={12} sm={8} smOffset={2} md={4} mdOffset={0}>
           <BillingAddress/>
           <ShippingAddress/>
@@ -33,7 +33,7 @@ const Checkout = ({ handleSubmit, planName, planPrice }) => (
           <Payment/>
         </Col>
         <Col xs={12} sm={8} smOffset={2} md={4} mdOffset={0}>
-          <Review handleSubmit={handleSubmit}/>
+          <Review/>
         </Col>
       </form>
     </Row>

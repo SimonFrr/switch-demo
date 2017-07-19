@@ -6,7 +6,7 @@ import {
 } from 'react-bootstrap';
 import PlanDisplayer from '../generic/PlanDisplayer';
 
-const Review = ({ handleSubmit, planName, planPrice }) => (
+const Review = ({ planName, planPrice }) => (
   <Panel header={< h3 > Checkout Review < /h3>}>
     <p>
       {planName}
@@ -36,7 +36,7 @@ const Review = ({ handleSubmit, planName, planPrice }) => (
       </strong>
     </p>
     <br/>
-    <Button bsStyle="primary" bsSize="large" block onClick={handleSubmit}>
+    <Button type="submit" bsStyle="primary" bsSize="large" block>
       Place Order
     </Button>
   </Panel>
