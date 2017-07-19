@@ -33,7 +33,7 @@ const Review = ({ onCheckoutSubmit, planName, planPrice }) => (
     <p>
       <strong>
         Total
-        <span className="pull-right">$39</span>
+        <span className="pull-right">{planPrice}</span>
       </strong>
     </p>
     <br/>
