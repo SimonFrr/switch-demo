@@ -11,7 +11,7 @@ const Review = ({ onCheckoutSubmit, planName, planPrice }) => (
   <Panel header={< h3 > Checkout Review < /h3>}>
     <p>
       {planName}
-      <span className="pull-right">{planPrice}</span>
+      <span className="pull-right">${planPrice}</span>
     </p>
     <p>
       SIM Card
@@ -33,7 +33,7 @@ const Review = ({ onCheckoutSubmit, planName, planPrice }) => (
     <p>
       <strong>
         Total
-        <span className="pull-right">{planPrice}</span>
+        <span className="pull-right">${planPrice}</span>
       </strong>
     </p>
     <br/>

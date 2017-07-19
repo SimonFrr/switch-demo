@@ -19,7 +19,7 @@ const Checkout = ({ onCheckoutSubmit, planName, planPrice }) => (
     <Row>
       <Col xs={12} sm={8} smOffset={2} md={12} mdOffset={0}>
         <PageHeader>Checkout</PageHeader>
-        <Alert>Complete your order of {planName} ({planPrice}/m) and you will receive your SIM card within two days. You can then port in a number for free when you activate your SIM.</Alert>
+        <Alert>Complete your order of {planName} (${planPrice}/m) and you will receive your SIM card within two days. You can then port in a number for free when you activate your SIM.</Alert>
       </Col>
     </Row>
     <Row>

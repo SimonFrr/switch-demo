@@ -9,16 +9,16 @@ export default function(state = "a", action) {
 
 const planList = [{
     id: 'a',
-    name: 'Light plan',
-    price: '$9'
+    name: 'Light Plan',
+    price: 9
   }, {
     id: 'b',
-    name: 'Standard plan',
-    price: '$19'
+    name: 'Standard Plan',
+    price: 19
   }, {
     id: 'c',
-    name: 'Data Hungry plan',
-    price: '$39'
+    name: 'Data Hungry Plan',
+    price: 39.8
   }
 ];
 
