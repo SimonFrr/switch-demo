@@ -11,7 +11,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import rootReducer from './reducers/root';
 import ReactGA from 'react-ga';
 
-ReactGA.initialize('');
+ReactGA.initialize('UA-102881712-1');
 
 const store = createStore(
   rootReducer,
