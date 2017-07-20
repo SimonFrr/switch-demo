@@ -1,5 +1,7 @@
+import {event} from '../gaHelper';
+
 export function submitRegistration (values) {
-  // API call
+  event('user registered');
   return {
     type: 'API_VALIDATED_REGISTRATION'
   }
