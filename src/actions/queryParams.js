@@ -1,7 +1,9 @@
 import { hasPlanWithId } from '../reducers/plan';
 
-// https://davidwalsh.name/query-string-javascript
+// From https://davidwalsh.name/query-string-javascript
 // We use this instead of URLSearchParams for maximum compatibility
+// Sadly react-create-app does not include this polyfill
+// See https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#supported-language-features-and-polyfills
 function getUrlParameter(name) {
   name = name.replace(/[[]/, '\\[').replace(/[\]]/, '\\]');
   var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
