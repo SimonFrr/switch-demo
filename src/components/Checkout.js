@@ -50,7 +50,13 @@ const ConnectedCheckout = compose(
   reduxForm({
     form: 'checkout',
     destroyOnUnmount: false,
-    initialValues: { isShippingSameAsBilling: true }
+    initialValues: {
+      isShippingSameAsBilling: true,
+      payment: {
+        expirationMonth: 'placeholder',
+        expirationYear: 'placeholder'
+      }
+    }
   })
 )(Checkout);
 

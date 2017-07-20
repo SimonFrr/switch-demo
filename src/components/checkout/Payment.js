@@ -41,7 +41,7 @@ const Payment = () => (
               Expiration Month
             </ControlLabel>
             <Field component={FieldCompatibleSelect} name="expirationMonth">
-              <option disabled selected value> -- select -- </option>
+              <option disabled value="placeholder"> -- select -- </option>
               {months.map((month, index) => <option key={index} value={month}>{month}</option>)}
             </Field>
           </FormGroup>
@@ -52,7 +52,7 @@ const Payment = () => (
               Expiration Year
             </ControlLabel>
             <Field component={FieldCompatibleSelect} name="expirationYear">
-              <option disabled selected value> -- select -- </option>
+              <option disabled value="placeholder"> -- select -- </option>
               {years.map((year, index) => <option key={index} value={year}>{year}</option>)}
             </Field>
           </FormGroup>
