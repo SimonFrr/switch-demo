@@ -13,11 +13,12 @@ const Review = ({ planName, planPrice }) => (
       <span className="pull-right">${planPrice}</span>
     </p>
     <p>
-      SIM Card
-      <span className="pull-right">$0</span>
-    </p>
-    <p>
       Taxes
+      <span className="pull-right">incl.</span>
+    </p>
+    <hr/>
+    <p>
+      SIM Card
       <span className="pull-right">$0</span>
     </p>
     <p>
@@ -31,7 +32,7 @@ const Review = ({ planName, planPrice }) => (
     <hr/>
     <p>
       <strong>
-        Total
+        Grand Total
         <span className="pull-right">${planPrice}</span>
       </strong>
     </p>

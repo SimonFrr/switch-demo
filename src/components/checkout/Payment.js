@@ -32,14 +32,14 @@ const Payment = () => (
         <ControlLabel>
           Name On The Card
         </ControlLabel>
-        <Field component={FieldCompatibleFormControl} name="cardHolderName"/>
+        <Field component={FieldCompatibleFormControl} name="cardHolderName" placeholder="John Doe"/>
       </FormGroup>
 
       <FormGroup>
         <ControlLabel>
           Credit / Debit Card Number
         </ControlLabel>
-        <Field component={FieldCompatibleFormControl} name="cardNumber"/>
+        <Field component={FieldCompatibleFormControl} name="cardNumber" placeholder="xxxx xxxx xxxx xxxx"/>
       </FormGroup>
 
       <Row>
@@ -70,7 +70,7 @@ const Payment = () => (
             <ControlLabel>
               CVV
             </ControlLabel>
-            <Field component={FieldCompatibleFormControl} name="verificationNumber"/>
+            <Field component={FieldCompatibleFormControl} name="verificationNumber" placeholder="123"/>
           </FormGroup>
         </Col>
       </Row>

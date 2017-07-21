@@ -21,7 +21,7 @@ const Checkout = ({ handleSubmit, planName, planPrice }) => (
     <Row>
       <Col xs={12} sm={8} smOffset={2} md={12} mdOffset={0}>
         <p className="text-center header-p">
-          Complete your order of <strong>{planName} (${planPrice}/m)</strong> and you will receive your SIM card within two days.
+          Complete your order of <strong>{planName} (${planPrice}/m)</strong> and you will receive your SIM card within 3 days.
           <br/>
           You can then port in a number for free when you activate your SIM.
         </p>

@@ -74,7 +74,7 @@ export default () => {
             <ControlLabel>
               City
             </ControlLabel>
-            <Field component={FieldCompatibleFormControl} name="city" type="text" placeholder="NYC"/>
+            <Field component={FieldCompatibleFormControl} name="city" type="text" placeholder="New York City"/>
           </FormGroup>
         </Col>
       </Row>
@@ -93,7 +93,7 @@ export default () => {
             <ControlLabel>
               State / Province
             </ControlLabel>
-            <Field component={FieldCompatibleFormControl} name="stateOrProvince" type="text" placeholder="Delaware"/>
+            <Field component={FieldCompatibleFormControl} name="stateOrProvince" type="text" placeholder="NY"/>
           </FormGroup>
         </Col>
       </Row>
@@ -102,7 +102,7 @@ export default () => {
         <ControlLabel>
           Telephone (to receive updates on your order)
         </ControlLabel>
-        <Field component={FieldCompatibleFormControl} name="phoneNumber" type="tel" placeholder="234323432"/>
+        <Field component={FieldCompatibleFormControl} name="phoneNumber" type="tel" placeholder="1234567890"/>
       </FormGroup>
     </div>
   )

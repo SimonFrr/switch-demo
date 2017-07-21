@@ -15,5 +15,6 @@ export default () => (
     <img src={tickIcon} style={imgStyle}></img>
     <h3>Thank you for your order!</h3>
     <p>You will receive an order confirmation email with details of your order and a link to track its progress.</p>
+    <p>You will receive your SIM card within 3 days. You can then port in a number for free when you activate your SIM.</p>
   </Col>
 );
