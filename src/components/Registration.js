@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { reduxForm, Field } from 'redux-form';
@@ -13,41 +13,50 @@ import {
 import { FieldCompatibleFormControl } from './generic/FieldCompatibleControls';
 import { submitRegistration } from '../actions/registration';
 import PlanDisplayer from './generic/PlanDisplayer';
+import { pageView } from '../gaHelper';
 
-const Registration = ({ handleSubmit, planName, planPrice }) => (
-  <Col xs={12} sm={8} smOffset={2} md={6} mdOffset={3}>
-    <p className="text-center header-p">
-      You have selected the <strong>{planName} (${planPrice}/month)</strong>
-    </p>
-    <p className="text-center header-p">
-      <strong>Step 1/2 - Register</strong>
-    </p>
-    <Panel>
-      <form onSubmit={handleSubmit}>
-        <FormGroup>
-          <ControlLabel> First Name </ControlLabel>
-          <Field component={FieldCompatibleFormControl} name="firstName" type="text" placeholder="John"/>
-        </FormGroup>
+class Registration extends Component {
+  componentDidMount() {
+    pageView('registration');
+  }
 
-        <FormGroup>
-          <ControlLabel> Last Name </ControlLabel>
-          <Field component={FieldCompatibleFormControl} name="lastName" type="text" placeholder="Doe"/>
-        </FormGroup>
+  render() {
+    return (
+      <Col xs={12} sm={8} smOffset={2} md={6} mdOffset={3}>
+        <p className="text-center header-p">
+          You have selected the <strong>{this.props.planName} (${this.props.planPrice}/month)</strong>
+        </p>
+        <p className="text-center header-p">
+          <strong>Step 1/2 - Register</strong>
+        </p>
+        <Panel>
+          <form onSubmit={this.props.handleSubmit}>
+            <FormGroup>
+              <ControlLabel> First Name </ControlLabel>
+              <Field component={FieldCompatibleFormControl} name="firstName" type="text" placeholder="John"/>
+            </FormGroup>
 
-        <FormGroup>
-          <ControlLabel> Email Address </ControlLabel>
-          <Field component={FieldCompatibleFormControl} name="emailAddress" type="email" placeholder="you@world.com"/>
-        </FormGroup>
+            <FormGroup>
+              <ControlLabel> Last Name </ControlLabel>
+              <Field component={FieldCompatibleFormControl} name="lastName" type="text" placeholder="Doe"/>
+            </FormGroup>
 
-        <FormGroup>
-          <Button type="submit" bsStyle="success" bsSize="large" block>
-            Join Switch!
-          </Button>
-        </FormGroup>
-      </form>
-    </Panel>
-  </Col>
-);
+            <FormGroup>
+              <ControlLabel> Email Address </ControlLabel>
+              <Field component={FieldCompatibleFormControl} name="emailAddress" type="email" placeholder="you@world.com"/>
+            </FormGroup>
+
+            <FormGroup>
+              <Button type="submit" bsStyle="success" bsSize="large" block>
+                Join Switch!
+              </Button>
+            </FormGroup>
+          </form>
+        </Panel>
+      </Col>
+    )
+  }
+}
 
 const mapDispatchToProps = dispatch => ({
   onSubmit: values => dispatch(submitRegistration(values))

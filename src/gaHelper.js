@@ -6,3 +6,7 @@ export const event = action => {
     action: action
   });
 }
+
+export const pageView = page => {
+  ReactGA.pageview(page);
+}
