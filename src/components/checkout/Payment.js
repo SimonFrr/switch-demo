@@ -4,8 +4,7 @@ import {
   Col,
   Panel,
   FormGroup,
-  ControlLabel,
-  Alert
+  ControlLabel
 } from 'react-bootstrap';
 import { Field, FormSection } from 'redux-form';
 import { FieldCompatibleSelect, FieldCompatibleFormControl } from '../generic/FieldCompatibleControls';

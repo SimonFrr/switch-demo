@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { reduxForm, Field } from 'redux-form';
 import {
   Col,
-  PageHeader,
   Panel,
   FormGroup,
   ControlLabel,

@@ -3,9 +3,7 @@ import { compose } from 'redux';
 import { connect } from 'react-redux';
 import {
   Row,
-  Col,
-  PageHeader,
-  Alert
+  Col
 } from 'react-bootstrap';
 import BillingAddress from './checkout/BillingAddress';
 import ShippingAddress from './checkout/ShippingAddress';
