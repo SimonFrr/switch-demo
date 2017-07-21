@@ -10,7 +10,7 @@ import {
 import { Field, FormSection } from 'redux-form';
 import { FieldCompatibleSelect, FieldCompatibleFormControl } from '../generic/FieldCompatibleControls';
 
-const months = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
+const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 const years = [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028];
 
 const Payment = () => (
@@ -21,10 +21,18 @@ const Payment = () => (
           Credit / Debit Card Type
         </ControlLabel>
         <Field component={FieldCompatibleSelect} name="cardType">
+          <option disabled value="placeholder"> -- select -- </option>
           <option value="visa">visa</option>
           <option value="mastercard">mastercard</option>
           <option value="amex">amex</option>
         </Field>
+      </FormGroup>
+
+      <FormGroup>
+        <ControlLabel>
+          Name On The Card
+        </ControlLabel>
+        <Field component={FieldCompatibleFormControl} name="cardHolderName"/>
       </FormGroup>
 
       <FormGroup>
@@ -35,40 +43,37 @@ const Payment = () => (
       </FormGroup>
 
       <Row>
-        <Col xs={6}>
+        <Col xs={4}>
           <FormGroup>
             <ControlLabel>
-              Expiration Month
+              Exp. Month
             </ControlLabel>
             <Field component={FieldCompatibleSelect} name="expirationMonth">
-              <option disabled value="placeholder"> -- select -- </option>
+              <option disabled value="placeholder"> -- </option>
               {months.map((month, index) => <option key={index} value={month}>{month}</option>)}
             </Field>
           </FormGroup>
         </Col>
-        <Col xs={6}>
+        <Col xs={4}>
           <FormGroup>
             <ControlLabel>
-              Expiration Year
+              Exp. Year
             </ControlLabel>
             <Field component={FieldCompatibleSelect} name="expirationYear">
-              <option disabled value="placeholder"> -- select -- </option>
+              <option disabled value="placeholder"> -- </option>
               {years.map((year, index) => <option key={index} value={year}>{year}</option>)}
             </Field>
           </FormGroup>
         </Col>
+        <Col xs={4}>
+          <FormGroup>
+            <ControlLabel>
+              CVV
+            </ControlLabel>
+            <Field component={FieldCompatibleFormControl} name="verificationNumber"/>
+          </FormGroup>
+        </Col>
       </Row>
-
-      <FormGroup>
-        <ControlLabel>
-          Card Verification Number
-        </ControlLabel>
-        <Field component={FieldCompatibleFormControl} name="verificationNumber"/>
-      </FormGroup>
-
-      <Alert>
-        You will be enrolled in Auto Pay
-      </Alert>
     </FormSection>
   </Panel>
 );

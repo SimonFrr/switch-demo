@@ -12,10 +12,16 @@ import {
 } from 'react-bootstrap';
 import { FieldCompatibleFormControl } from './generic/FieldCompatibleControls';
 import { submitRegistration } from '../actions/registration';
+import PlanDisplayer from './generic/PlanDisplayer';
 
-const Registration = ({ handleSubmit }) => (
+const Registration = ({ handleSubmit, planName, planPrice }) => (
   <Col xs={12} sm={8} smOffset={2} md={6} mdOffset={3}>
-    <PageHeader>Registration</PageHeader>
+    <p className="text-center header-p">
+      You have selected the <strong>{planName} (${planPrice}/month)</strong>
+    </p>
+    <p className="text-center header-p">
+      <strong>Step 1/2 - Register</strong>
+    </p>
     <Panel>
       <form onSubmit={handleSubmit}>
         <FormGroup>
@@ -34,8 +40,8 @@ const Registration = ({ handleSubmit }) => (
         </FormGroup>
 
         <FormGroup>
-          <Button type="submit" bsStyle="success">
-            Submit
+          <Button type="submit" bsStyle="success" bsSize="large" block>
+            Join Switch!
           </Button>
         </FormGroup>
       </form>
@@ -52,7 +58,8 @@ const ConnectedRegistration = compose(
   reduxForm({
     form: 'registration',
     destroyOnUnmount: false
-  })
+  }),
+  PlanDisplayer
 )(Registration);
 
 export default ConnectedRegistration;

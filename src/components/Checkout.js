@@ -20,8 +20,14 @@ const Checkout = ({ handleSubmit, planName, planPrice }) => (
   <Col xs={12}>
     <Row>
       <Col xs={12} sm={8} smOffset={2} md={12} mdOffset={0}>
-        <PageHeader>Checkout</PageHeader>
-        <Alert>Complete your order of {planName} (${planPrice}/m) and you will receive your SIM card within two days. You can then port in a number for free when you activate your SIM.</Alert>
+        <p className="text-center header-p">
+          Complete your order of <strong>{planName} (${planPrice}/m)</strong> and you will receive your SIM card within two days.
+          <br/>
+          You can then port in a number for free when you activate your SIM.
+        </p>
+        <p className="text-center header-p">
+          <strong>Step 2/2 - Checkout</strong>
+        </p>
         <ErrorMessage/>
       </Col>
     </Row>
@@ -55,6 +61,7 @@ const ConnectedCheckout = compose(
     initialValues: {
       isShippingSameAsBilling: true,
       payment: {
+        cardType: 'placeholder',
         expirationMonth: 'placeholder',
         expirationYear: 'placeholder'
       }

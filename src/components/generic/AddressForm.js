@@ -24,7 +24,7 @@ export default () => {
         <Col xs={6}>
           <FormGroup>
             <ControlLabel>
-              Middle Name / Initials
+              Middle Name
             </ControlLabel>
             <Field component={FieldCompatibleFormControl} name="middleName" type="text" placeholder="A."/>
           </FormGroup>

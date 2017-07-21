@@ -36,7 +36,7 @@ const Review = ({ planName, planPrice }) => (
       </strong>
     </p>
     <br/>
-    <Button type="submit" bsStyle="primary" bsSize="large" block>
+    <Button type="submit" bsStyle="success" bsSize="large" block>
       Place Order
     </Button>
   </Panel>

@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import TopBar from './components/TopBar';
 import Loader from './components/Loader';
 import Registration from './components/Registration';
 import Checkout from './components/Checkout';
 import Confirmation from './components/Confirmation';
 import {progressDict, getProgress} from './reducers/progress';
 import {saveQueryParams} from './actions/queryParams';
-import './App.css';
 
 class App extends Component {
   // Save plan id in store before any component renders
@@ -25,6 +25,7 @@ class App extends Component {
 
     return (
       <div>
+        <TopBar/>
         <Loader/>
         {content}
       </div>
