@@ -77,4 +77,4 @@ const Payment = () => (
   </Panel>
 );
 
-export default Payment
+export default Payment;

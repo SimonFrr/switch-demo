@@ -47,4 +47,4 @@ const ConnectedReview = compose(
   PlanDisplayer
 )(Review);
 
-export default ConnectedReview
+export default ConnectedReview;

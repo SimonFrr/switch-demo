@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
-import {
-  Col
-} from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 import tickIcon from '../tick.svg';
 import { pageView } from '../gaHelper';
 
 const imgStyle = {
   width: 100,
   marginTop: 50
-}
+};
 
 class Confirmation extends Component {
   componentDidMount() {
@@ -25,6 +23,6 @@ class Confirmation extends Component {
       </Col>
     )
   }
-}
+};
 
-export default Confirmation
+export default Confirmation;

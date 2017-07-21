@@ -9,6 +9,6 @@ export default function(state = false, action) {
     default:
       return state;
   }
-}
+};
 
 export const isLoading = state => state.loading;

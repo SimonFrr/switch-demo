@@ -55,7 +55,7 @@ class Registration extends Component {
       </Col>
     )
   }
-}
+};
 
 const mapDispatchToProps = dispatch => ({
   onSubmit: values => dispatch(submitRegistration(values))

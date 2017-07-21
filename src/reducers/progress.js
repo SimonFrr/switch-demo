@@ -2,7 +2,7 @@ export const progressDict = {
   REGISTRATION: 'REGISTRATION',
   CHECKOUT: 'CHECKOUT',
   CONFIRMATION: 'CONFIRMATION'
-}
+};
 
 export default function(state = progressDict.REGISTRATION, action) {
   switch (action.type) {
@@ -13,6 +13,6 @@ export default function(state = progressDict.REGISTRATION, action) {
     default:
       return state;
   }
-}
+};
 
 export const getProgress = state => state.progress;

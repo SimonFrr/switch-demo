@@ -5,8 +5,8 @@ export const event = action => {
     category: 'acquisition',
     action: action
   });
-}
+};
 
 export const pageView = page => {
   ReactGA.pageview(page);
-}
+};

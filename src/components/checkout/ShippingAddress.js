@@ -27,7 +27,7 @@ const ShippingAddress = ({ isShippingSameAsBilling }) => {
       {content}
     </Panel>
   );
-}
+};
 
 const mapStateToProps = state => ({
   isShippingSameAsBilling: formValueSelector('checkout')(state, 'isShippingSameAsBilling')

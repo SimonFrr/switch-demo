@@ -21,5 +21,5 @@ export function saveQueryParams () {
   return {
     type: 'SAVE_QUERY_PARAMS',
     planId
-  }
-}
+  };
+};

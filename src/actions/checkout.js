@@ -1,4 +1,4 @@
-import {event} from '../gaHelper';
+import { event } from '../gaHelper';
 
 // Temp function to mock API calls and their responses
 const fetchStub = behavior => {

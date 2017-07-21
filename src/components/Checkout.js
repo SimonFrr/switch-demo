@@ -53,7 +53,7 @@ class Checkout extends Component {
       </Col>
     )
   }
-}
+};
 
 const mapDispatchToProps = dispatch => ({
   onSubmit: values => dispatch(submitCheckout(values))
@@ -76,4 +76,4 @@ const ConnectedCheckout = compose(
   })
 )(Checkout);
 
-export default ConnectedCheckout
+export default ConnectedCheckout;

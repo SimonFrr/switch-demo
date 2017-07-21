@@ -1,11 +1,11 @@
-export default function(state = "a", action) {
+export default function(state = '', action) {
   switch (action.type) {
     case 'SAVE_QUERY_PARAMS':
       return action.planId;
     default:
       return state;
   }
-}
+};
 
 const planList = [{
     id: 'a',

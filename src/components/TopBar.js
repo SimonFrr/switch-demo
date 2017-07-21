@@ -1,5 +1,5 @@
 import React from 'react';
-import {Col} from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 
 const topBarStyle = {
   height: 64,
@@ -8,11 +8,11 @@ const topBarStyle = {
   marginBottom: 20,
   display: 'flex',
   justifyContent: 'center'
-}
+};
 
 const brandStyle = {
   marginTop: 15
-}
+};
 
 const TopBar = () => (
   <Col xs={12} style={topBarStyle}>

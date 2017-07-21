@@ -9,7 +9,7 @@ const ErrorMessage = ({ isErrorShown }) => (
       Your order could not be completed. Please try again.
     </Alert>
   )
-)
+);
 
 const mapStateToProps = state => ({
   isErrorShown: isErrorShown(state)

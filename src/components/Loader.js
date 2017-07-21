@@ -1,5 +1,5 @@
 import React from 'react';
-import {isLoading} from '../reducers/loading';
+import { isLoading } from '../reducers/loading';
 import { connect } from 'react-redux';
 
 const loaderStyles = {
@@ -11,7 +11,7 @@ const loaderStyles = {
   backgroundColor: 'white',
   display: 'flex',
   alignItems: 'center'
-}
+};
 
 const Loader = ({ isLoading }) => (
   isLoading && (

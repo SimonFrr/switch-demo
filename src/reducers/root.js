@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 import { reducer as form } from 'redux-form';
-import progress from './progress'
-import loading from './loading'
-import planId from './plan'
-import error from './error'
+import progress from './progress';
+import loading from './loading';
+import planId from './plan';
+import error from './error';
 
 const rootReducer = combineReducers({
   progress,
@@ -11,6 +11,6 @@ const rootReducer = combineReducers({
   planId,
   form,
   error
-})
+});
 
 export default rootReducer;

@@ -8,6 +8,6 @@ export default function(state = false, action) {
     default:
       return state;
   }
-}
+};
 
 export const isErrorShown = state => state.error;
