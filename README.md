@@ -1,3 +1,39 @@
+# SWITCH DOCUMENTATION
+
+This project was generated with react-create-app (https://github.com/facebookincubator/create-react-app). This section of the readme contains switch-specific info. The original, generated documentation is below this.
+
+## Usage
+
+- `npm start` or `yarn start` => starts the auto-reloading local development server on localhost:3000
+- `npm run build` or `yarn build` => prepares the build => to deploy, transfer all the contents of the `build/` folder to the remote server via FTP.
+
+You need to pass a query string with a planId for the app to work, like so: http://localhost:3000/?planId=c
+
+## Simple modifications
+
+All templates (React components) are in the `src/components/` folder. This is where wording modifications should be done, except for the plan names and prices that sit in `src/reducers/plan.js`.
+
+Generic styling should be done in `src/index.css`, specific styling should be done with JS objects directly in React components (see existing examples).
+
+For the rest, learn React and Redux.
+
+In `src/actions/checkout` an async API is mocked to simulate the actual experience.
+
+## Philosophy
+
+This is a React + Redux app. The main npm packages it uses are react-redux, redux-form and react-bootstrap. React-bootstrap makes it hard to customize bootstrap, as it reimplements the javascript part. Switching to the normal bootstrap package might be a better option.
+
+The chosen philosophy is the following: an action should just describe an event, like a user action or an API response ; reducers should implement the business logic from them. This is opposed to having the action creators compute the business logic, and dispatching reducer-specific actions.
+
+Action creators should handle all async stuff (using redux-thunk).
+
+## Misc
+
+Lots of interesting intel regarding autofill:
+https://cloudfour.com/thinks/autofill-what-web-devs-should-know-but-dont/
+
+# REACT-CREATE-APP GENERATED README
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
@@ -1760,7 +1796,7 @@ If you’re using [Apache HTTP Server](https://httpd.apache.org/), you need to c
     RewriteRule ^ index.html [QSA,L]
 ```
 
-It will get copied to the `build` folder when you run `npm run build`. 
+It will get copied to the `build` folder when you run `npm run build`.
 
 If you’re using [Apache Tomcat](http://tomcat.apache.org/), you need to follow [this Stack Overflow answer](https://stackoverflow.com/a/41249464/4878474).
 
