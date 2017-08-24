@@ -19,7 +19,7 @@ const Payment = () => (
         <ControlLabel>
           Credit / Debit Card Type
         </ControlLabel>
-        <Field component={FieldCompatibleSelect} name="cardType" autocomplete="cc-type">
+        <Field component={FieldCompatibleSelect} name="cardType" autoComplete="cc-type">
           <option disabled value="placeholder"> -- select -- </option>
           <option value="visa">visa</option>
           <option value="mastercard">mastercard</option>
@@ -31,14 +31,14 @@ const Payment = () => (
         <ControlLabel>
           Name On The Card
         </ControlLabel>
-        <Field component={FieldCompatibleFormControl} name="cardHolderName" type="text" autocomplete="cc-name" placeholder="John Doe"/>
+        <Field component={FieldCompatibleFormControl} name="cardHolderName" type="text" autoComplete="cc-name" placeholder="John Doe"/>
       </FormGroup>
 
       <FormGroup>
         <ControlLabel>
           Credit / Debit Card Number
         </ControlLabel>
-        <Field component={FieldCompatibleFormControl} name="cardNumber" type="tel" autocomplete="cc-number" placeholder="xxxx xxxx xxxx xxxx"/>
+        <Field component={FieldCompatibleFormControl} name="cardNumber" type="tel" autoComplete="cc-number" placeholder="xxxx xxxx xxxx xxxx"/>
       </FormGroup>
 
       <Row>
@@ -47,7 +47,7 @@ const Payment = () => (
             <ControlLabel>
               Exp. date
             </ControlLabel>
-            <Field component={FieldCompatibleFormControl} name="expirationDate" type="month" autocomplete="cc-exp"/>
+            <Field component={FieldCompatibleFormControl} name="expirationDate" type="month" autoComplete="cc-exp"/>
           </FormGroup>
         </Col>
         <Col xs={4}>
@@ -55,7 +55,7 @@ const Payment = () => (
             <ControlLabel>
               CVV
             </ControlLabel>
-            <Field component={FieldCompatibleFormControl} name="verificationNumber" type="tel" autocomplete="cc-csc" placeholder="xxx"/>
+            <Field component={FieldCompatibleFormControl} name="verificationNumber" type="tel" autoComplete="cc-csc" placeholder="xxx"/>
           </FormGroup>
         </Col>
       </Row>
