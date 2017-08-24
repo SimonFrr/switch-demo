@@ -42,36 +42,6 @@ const Payment = () => (
       </FormGroup>
 
       <Row>
-        <Col xs={4}>
-          <FormGroup>
-            <ControlLabel>
-              Exp. Month
-            </ControlLabel>
-            <Field component={FieldCompatibleSelect} name="expirationMonth">
-              <option disabled value="placeholder"> -- </option>
-              {months.map((month, index) => <option key={index} value={month}>{month}</option>)}
-            </Field>
-          </FormGroup>
-        </Col>
-        <Col xs={4}>
-          <FormGroup>
-            <ControlLabel>
-              Exp. Year
-            </ControlLabel>
-            <Field component={FieldCompatibleSelect} name="expirationYear">
-              <option disabled value="placeholder"> -- </option>
-              {years.map((year, index) => <option key={index} value={year}>{year}</option>)}
-            </Field>
-          </FormGroup>
-        </Col>
-        <Col xs={4}>
-          <FormGroup>
-            <ControlLabel>
-              CVV
-            </ControlLabel>
-            <Field component={FieldCompatibleFormControl} name="verificationNumber" type="tel" placeholder="123"/>
-          </FormGroup>
-        </Col>
         <Col xs={8}>
           <FormGroup>
             <ControlLabel>
@@ -85,7 +55,7 @@ const Payment = () => (
             <ControlLabel>
               CVV
             </ControlLabel>
-            <Field component={FieldCompatibleFormControl} name="verificationNumber" type="tel" autocomplete="cc-csc" placeholder="123"/>
+            <Field component={FieldCompatibleFormControl} name="verificationNumber" type="tel" autocomplete="cc-csc" placeholder="xxx"/>
           </FormGroup>
         </Col>
       </Row>
