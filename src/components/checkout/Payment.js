@@ -72,6 +72,22 @@ const Payment = () => (
             <Field component={FieldCompatibleFormControl} name="verificationNumber" type="tel" placeholder="123"/>
           </FormGroup>
         </Col>
+        <Col xs={8}>
+          <FormGroup>
+            <ControlLabel>
+              Exp. date
+            </ControlLabel>
+            <Field component={FieldCompatibleFormControl} name="changeme" type="month"/>
+          </FormGroup>
+        </Col>
+        <Col xs={4}>
+          <FormGroup>
+            <ControlLabel>
+              CVV
+            </ControlLabel>
+            <Field component={FieldCompatibleFormControl} name="changeme2" type="tel" placeholder="123"/>
+          </FormGroup>
+        </Col>
       </Row>
     </FormSection>
   </Panel>
