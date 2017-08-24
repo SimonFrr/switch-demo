@@ -9,9 +9,6 @@ import {
 import { Field, FormSection } from 'redux-form';
 import { FieldCompatibleSelect, FieldCompatibleFormControl } from '../generic/FieldCompatibleControls';
 
-const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-const years = [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028];
-
 const Payment = () => (
   <Panel header={<h3> Payment Method </h3>}>
     <FormSection name="payment">
