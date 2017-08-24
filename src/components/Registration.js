@@ -32,17 +32,17 @@ class Registration extends Component {
           <form onSubmit={this.props.handleSubmit}>
             <FormGroup>
               <ControlLabel> First Name </ControlLabel>
-              <Field component={FieldCompatibleFormControl} name="firstName" type="text" placeholder="John"/>
+              <Field component={FieldCompatibleFormControl} name="firstName" type="text" autocomplete="given-name" placeholder="John"/>
             </FormGroup>
 
             <FormGroup>
               <ControlLabel> Last Name </ControlLabel>
-              <Field component={FieldCompatibleFormControl} name="lastName" type="text" placeholder="Doe"/>
+              <Field component={FieldCompatibleFormControl} name="lastName" type="text" autocomplete="family-name" placeholder="Doe"/>
             </FormGroup>
 
             <FormGroup>
               <ControlLabel> Email Address </ControlLabel>
-              <Field component={FieldCompatibleFormControl} name="emailAddress" type="email" placeholder="you@world.com"/>
+              <Field component={FieldCompatibleFormControl} name="emailAddress" type="email" autocomplete="email" placeholder="you@world.com"/>
             </FormGroup>
 
             <FormGroup>

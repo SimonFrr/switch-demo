@@ -32,6 +32,9 @@ Action creators should handle all async stuff (using redux-thunk).
 Lots of interesting intel regarding autofill:
 https://cloudfour.com/thinks/autofill-what-web-devs-should-know-but-dont/
 
+The `autocomplete` fields in the templates follow this standard:
+https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofilling-form-controls:-the-autocomplete-attribute
+
 # REACT-CREATE-APP GENERATED README
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
