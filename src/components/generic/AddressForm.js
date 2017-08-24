@@ -66,7 +66,7 @@ export default () => {
             <ControlLabel>
               Zip
             </ControlLabel>
-            <Field component={FieldCompatibleFormControl} name="zipCode" type="text" placeholder="10001"/>
+            <Field component={FieldCompatibleFormControl} name="zipCode" type="tel" placeholder="10001"/>
           </FormGroup>
         </Col>
         <Col xs={6}>
